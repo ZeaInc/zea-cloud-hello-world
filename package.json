@@ -1,0 +1,10 @@
+{
+  "name": "zea-cloud-hello-world",
+  "version": "1.0.0",
+  "description": "Getting started using the Zea Cloud SDK for Node.js",
+  "license": "MIT",
+  "dependencies": {
+    "@zeainc/zea-cloud-sdk-nodejs": "^1.0.0-6",
+    "open": "^8.2.1"
+  }
+}
