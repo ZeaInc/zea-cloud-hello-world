@@ -33,27 +33,9 @@ const { createZeaCloudClient } = require("@zeainc/zea-cloud-sdk-nodejs");
     console.info(payload);
   });
 
-  folder.on("file-process-progress", (payload) => {
-    console.info(payload);
-  });
-
-  folder.on("file-process-completed", (payload) => {
-    console.info(payload);
-    // Now the file is uploaded and processed. We can retrieve the signed url for the zcad file.
-
-    // Fetch file.
-    // const file = folder.getFileByName("Dead_eye_bearingSTEP.stp");
-    // const signedUrl = await file.getSignedUrlToReadDownstream(
-    //   "cad",
-    //   "output.zcad"
-    // );
-    // console.info("Signed URL for reading:", signedUrl);
-  });
-
   // A .zcadconfig file is used to configure the processing of source cad files into zcad files.
-  await folder.addFileFromPath("./.zcadconfig");
-
-  await folder.addFileFromPath("./Dead_eye_bearingSTEP.stp");
+  await folder.addFileFromPath("./data/.zcadconfig");
+  await folder.addFileFromPath("./data/Fidget-Spinner-2.STEP");
 
   zeaCloudClient.disconnectWebSocket();
 })();
