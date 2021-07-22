@@ -1,11 +1,15 @@
+require("dotenv").config();
+
 const { createZeaCloudClient } = require("@zeainc/zea-cloud-sdk-nodejs");
 const open = require("open");
 
 (async () => {
+  // Create the Zea Cloud client.
+  // More info in the "Getting Started" section of the README.md file.
   const zeaCloudClient = await createZeaCloudClient({
-    clientId: "<<CLIENT-ID>>",
-    clientSecret: "<<CLIENT-SECRET>>",
-    environmentTag: "development",
+    clientId: process.env.ZEA_CLOUD_CLIENT_ID,
+    clientSecret: process.env.ZEA_CLOUD_CLIENT_SECRET,
+    environmentTag: "staging",
   });
 
   // Create organization.
