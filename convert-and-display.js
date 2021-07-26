@@ -34,7 +34,11 @@ const downloadFile = async (url, path) => {
 
   // Create project.
   const project = await organization.addProject("Some Project");
+
+  // the project contains a version history, so ensure we have the latest version.
   await project.fetchLatestVersion();
+
+  // Retrieve the project ID for the new project.
   const projectId = project.getId();
   console.info("Project id:", projectId);
 
@@ -86,5 +90,7 @@ const downloadFile = async (url, path) => {
 
   // A .zcadconfig file is used to configure the processing of source cad files into zcad files.
   await folder.addFileFromPath("./data/.zcadconfig");
+
+  // Upload a CAD file for processing. This file will be processed using the settings specified in the .zcadconfig file.
   await folder.addFileFromPath("./data/HC_SRO4.step");
 })();
