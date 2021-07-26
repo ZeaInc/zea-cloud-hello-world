@@ -45,3 +45,16 @@ e.g.
 ```
 node convert-and-display.js
 ```
+
+The sample script will perform the following steps.
+
+- Create a new organization called "Some Inc."
+- Under that organization, it creates a new project called "Some Project"
+- Upload the .zcadconfig file to configure the project. 
+- Upload one of the sample files to the project.
+- The script listens to events from the cloud SDK to determine once the processing is finished.
+- Once the file is processed, the script launches the Zea CAD Viewer providing it with the URL to the resulting zcad file.
+
+![image](https://user-images.githubusercontent.com/840121/127028856-79c3adbe-ebb9-4c2c-82ec-8921c27fa7d3.png)
+
+
