@@ -25,12 +25,10 @@ const downloadFile = async (url, path) => {
     environmentTag: "staging",
   });
 
-  // Create organization.
-  const organization = await zeaCloudClient.addOrganization(
-    "Some Inc.",
-    "billing@someinc.com"
+  // Retrieve the Organization associated with this Client.
+  const organization = await zeaCloudClient.findOrganization(
+    process.env.ZEA_CLOUD_ORGANIZATION_ID
   );
-  console.info("Organization id:", organization.getId());
 
   // Create project.
   const project = await organization.addProject("Some Project");
