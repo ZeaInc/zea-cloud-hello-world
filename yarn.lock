@@ -8,9 +8,9 @@
   integrity sha512-bsjleuRKWmGqajMerkzox19aGbscQX5rmmvvXl3wlIp5gMG1HgkiwPxsN5p070fBDKTNSPgojVbuY1+HWMbFhg==
 
 "@zeainc/zea-cloud-sdk-nodejs@^1.0.0-0":
-  version "1.0.0-6"
-  resolved "https://registry.yarnpkg.com/@zeainc/zea-cloud-sdk-nodejs/-/zea-cloud-sdk-nodejs-1.0.0-6.tgz#d23b4840f102cc7773600780609a6fcfd214681f"
-  integrity sha512-b9hiF5cuUPWSB5Zthqxgri94NN6I/dvdj8LLMo6n4kLjr79mMVG2fg3hIHhzW6fha9GIyAFRPfrTIHSZTWfsnQ==
+  version "1.0.0-7"
+  resolved "https://registry.yarnpkg.com/@zeainc/zea-cloud-sdk-nodejs/-/zea-cloud-sdk-nodejs-1.0.0-7.tgz#e327729291de24cbe733fb127604c5a030421a28"
+  integrity sha512-hfiaDSjhE2l7A7nlVoKDiUoP0ZqIw2dUpaFhzvhoZe6Z1Kr8Qiy8/YDKZ/zZTHXQ0fJwpLjSJHzl5d1TA0jZaw==
   dependencies:
     debug "^4.3.1"
     events "^3.3.0"
@@ -221,6 +221,11 @@ ms@2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
+
+node-fetch@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
+  integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
 object-inspect@^1.9.0:
   version "1.11.0"

@@ -3,6 +3,19 @@ require("dotenv").config();
 const { createZeaCloudClient } = require("@zeainc/zea-cloud-sdk-nodejs");
 const open = require("open");
 
+const fs = require("fs");
+const fetch = require("node-fetch");
+
+const downloadFile = async (url, path) => {
+  const res = await fetch(url);
+  const fileStream = fs.createWriteStream(path);
+  await new Promise((resolve, reject) => {
+    res.body.pipe(fileStream);
+    res.body.on("error", reject);
+    fileStream.on("finish", resolve);
+  });
+};
+
 (async () => {
   // Create the Zea Cloud client.
   // More info in the "Getting Started" section of the README.md file.
@@ -66,6 +79,9 @@ const open = require("open");
         signedUrl
       )}`
     );
+
+    // or use the signed url to download the zcad file to your system.
+    downloadFile(signedUrl, __dirname + "/HC_SRO4.zcad");
   });
 
   // A .zcadconfig file is used to configure the processing of source cad files into zcad files.
