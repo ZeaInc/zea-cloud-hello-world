@@ -35,9 +35,9 @@ https://cloud-staging.zea.live/
 cp .env.example .env
 ```
 
-5. Edit the newly created `.env` file and paste there your Zea Cloud's client id, secret and Organization ID.
+5. Edit the newly created `.env` file and paste there your Zea Cloud's organization id and secret.
 
-> The .env file should not be committed to version control. It is your responsibility to ensure that your Client Secret is not divulged to anyone outside of your organization. These 'secret' values can be managed using tools such as 'GitHub Secrets'.
+> The .env file should not be committed to version control. It is your responsibility to ensure that your Organization Secret is not divulged to anyone outside of your organization. These 'secret' values can be managed using tools such as 'GitHub Secrets'.
 
 https://docs.github.com/en/actions/reference/encrypted-secrets
 
@@ -51,7 +51,7 @@ node convert-and-display.js
 
 The sample script will perform the following steps.
 
-- Using the env vars, connects to a client and accesses the organization.
+- Using the env vars, connects to an organization.
 - Under that organization, it creates a new project called "Some Project"
 - Upload the .zcadconfig file to configure the project.
 - Upload one of the sample files to the project.

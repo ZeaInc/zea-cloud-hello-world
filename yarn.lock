@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/@types/component-emitter/-/component-emitter-1.2.10.tgz#ef5b1589b9f16544642e473db5ea5639107ef3ea"
   integrity sha512-bsjleuRKWmGqajMerkzox19aGbscQX5rmmvvXl3wlIp5gMG1HgkiwPxsN5p070fBDKTNSPgojVbuY1+HWMbFhg==
 
-"@zeainc/zea-cloud-sdk-nodejs@^1.0.0-8":
-  version "1.0.0-8"
-  resolved "https://registry.yarnpkg.com/@zeainc/zea-cloud-sdk-nodejs/-/zea-cloud-sdk-nodejs-1.0.0-8.tgz#091d9f215fa7146b0323d636cae0e8db41a0a629"
-  integrity sha512-H5rSJDobozLQtyiweoYWa6x48JasvQbAgulIeWXIucuA2AmNbnwlD+QbDqRghAcgSJ4Q2AfATqEilNMrSrsY3Q==
+"@zeainc/zea-cloud-sdk-nodejs@^1.0.0-0":
+  version "1.0.0-11"
+  resolved "https://registry.yarnpkg.com/@zeainc/zea-cloud-sdk-nodejs/-/zea-cloud-sdk-nodejs-1.0.0-11.tgz#696d7b0c063c512b145fd2325dd22e7b91c33f73"
+  integrity sha512-CVszqtLAHcwiwZMQvQuCa3l5PCZIhkwJLrPOIEsh7k8Z2zqTKACn/mgxfmdt5taJFkZ/3n4tLuAjjC9Zz/OUBA==
   dependencies:
     debug "^4.3.1"
     events "^3.3.0"
