@@ -17,11 +17,15 @@ const downloadFile = async (url, path) => {
 };
 
 (async () => {
+  // Environment variables.
+  const { ZEA_CLOUD_ORGANIZATION_ID, ZEA_CLOUD_ORGANIZATION_SECRET } =
+    process.env;
+
   // Create the Zea Cloud client.
   // More info in the "Getting Started" section of the README.md file.
   const zeaCloudClient = await createZeaCloudClient({
-    clientId: process.env.ZEA_CLOUD_CLIENT_ID,
-    clientSecret: process.env.ZEA_CLOUD_CLIENT_SECRET,
+    organizationId: ZEA_CLOUD_ORGANIZATION_ID,
+    organizationSecret: ZEA_CLOUD_ORGANIZATION_SECRET,
     environmentTag: "staging",
   });
 

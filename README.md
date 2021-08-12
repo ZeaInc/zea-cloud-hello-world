@@ -23,7 +23,7 @@ yarn
 
 This will install the Zea Cloud SDK and any dependencies into the node_modules folder of the project.
 
-3. Locate your Zea Cloud's client id and secret. You can find these values in the Zea Cloud console, or you can contact support@zea.live
+3. Locate your Zea Cloud's organization id and secret. You can find these values in the Zea Cloud console, or you can contact support@zea.live
 
 The zea cloud console can be found here:
 
