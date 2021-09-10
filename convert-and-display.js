@@ -29,20 +29,8 @@ const downloadFile = async (url, path) => {
     environmentTag: "staging",
   });
 
-  // Retrieve the Organization associated with this Client.
-  const organization = await zeaCloudClient.findOrganization(
-    process.env.ZEA_CLOUD_ORGANIZATION_ID
-  );
-
   // Create project.
-  const project = await organization.addProject("Some Project");
-
-  // the project contains a version history, so ensure we have the latest version.
-  await project.fetchLatestVersion();
-
-  // Retrieve the project ID for the new project.
-  const projectId = project.getId();
-  console.info("Project id:", projectId);
+  const project = await zeaCloudClient.fetchProject(projectId);
 
   // The project has a root folder that can contain files or subfolders.
   // In this example,  we will simply upload files to the root folder.
