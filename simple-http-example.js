@@ -6,7 +6,7 @@ const request = require("superagent");
 
 const {
   ZEA_CLOUD_API_HOST,
-  ZEA_CLOUD_AUTH0_SUBDOMAIN,
+  ZEA_CLOUD_API_AUTH_HOST,
   ZEA_CLOUD_ORGANIZATION_ID,
   ZEA_CLOUD_ORGANIZATION_SECRET,
 } = process.env;
@@ -15,16 +15,13 @@ const {
  * Get auth token.
  */
 const getToken = async () => {
-  const authUrl = `https://${ZEA_CLOUD_AUTH0_SUBDOMAIN}.auth0.com/oauth/token`;
+  const authUrl = `${ZEA_CLOUD_API_AUTH_HOST}/oauth/token`;
 
   try {
-    const response = await request
-      .post(authUrl)
-      .type("form")
-      .send({ audience: "cloud-api.zea.live" })
-      .send({ client_id: ZEA_CLOUD_ORGANIZATION_ID })
-      .send({ client_secret: ZEA_CLOUD_ORGANIZATION_SECRET })
-      .send({ grant_type: "client_credentials" });
+    const response = await request.post(authUrl).send({
+      organizationId: ZEA_CLOUD_ORGANIZATION_ID,
+      organizationSecret: ZEA_CLOUD_ORGANIZATION_SECRET,
+    });
 
     const { body } = response;
 
