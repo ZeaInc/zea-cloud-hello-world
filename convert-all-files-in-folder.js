@@ -43,32 +43,40 @@ async function processFolder(dir, output) {
   // The project has a root folder that can contain files or subfolders.
   // In this example,  we will simply upload files to the root folder.
   const folder = project.getRootFolder();
-  folder.on("file-process-completed", async (payload) => {
+
+  let processing = {};
+  let totalFiles = 0;
+  let completedFiles = 0;
+
+  folder.on("file-process-completed", (payload) => {
+    completedFiles += 1;
+
     const filename = payload.jobData.filename;
     const promise = processing[filename];
-    if (promise) {
-      delete processing[filename];
-      const project2 = await zeaCloudClient.fetchProject(ZEA_CLOUD_PROJECT_ID);
-      const file = project2.getRootFolder().getFileByName(filename);
-      if (file) {
-        console.log("File Succeeded:", filename);
-        const url = `https://storage.googleapis.com/zea-cloud-downstream-staging/${ZEA_CLOUD_ORGANIZATION_ID}/${ZEA_CLOUD_PROJECT_ID}/${payload.jobData.id}/cad/output.zcad`;
-        toc[filename] = url;
-        writeTOC(toc, output);
-      } else {
-        console.log("File Failed:", filename);
-        toc[filename] = "Failed";
-        writeTOC(toc, output);
-      }
-      if (Object.values(processing).length == 0) {
-        writeTOC(toc, output);
-        zeaCloudClient.disconnectWebSocket();
-      }
+
+    if (!promise) {
+      return;
+    }
+
+    delete processing[filename];
+
+    console.log(
+      `File succeeded (${completedFiles} of ${totalFiles}):`,
+      filename
+    );
+
+    const url = `https://storage.googleapis.com/zea-cloud-downstream-staging/${ZEA_CLOUD_ORGANIZATION_ID}/${ZEA_CLOUD_PROJECT_ID}/${payload.jobData.id}/cad/output.zcad`;
+
+    toc[filename] = url;
+    writeTOC(toc, output);
+
+    if (Object.values(processing).length == 0) {
+      writeTOC(toc, output);
+      zeaCloudClient.disconnectWebSocket();
     }
   });
 
   const files = fs.readdirSync(dir);
-  let processing = {};
   let filePaths = [];
   for (let i = 0; i < files.length; i++) {
     const file = files[i];
@@ -82,6 +90,8 @@ async function processFolder(dir, output) {
       }
     }
   }
+
+  totalFiles = filePaths.length;
 
   project.processFiles(filePaths);
 }
