@@ -37,6 +37,10 @@ cp .env.example .env
 
 5. Edit the newly created `.env` file and paste there your Zea Cloud's organization id and secret.
 
+![image](https://user-images.githubusercontent.com/840121/133453746-9b0516e3-5074-4963-8441-b4313a3cfa4f.png)
+
+> You can find your Organization ID and Secret using the Cloud Dashboard. Please sign into https://cloud-staging.zea.live/ and navigate to 'Organization settings'
+
 > The .env file should not be committed to version control. It is your responsibility to ensure that your Organization Secret is not divulged to anyone outside of your organization. These 'secret' values can be managed using tools such as 'GitHub Secrets'.
 
 https://docs.github.com/en/actions/reference/encrypted-secrets
