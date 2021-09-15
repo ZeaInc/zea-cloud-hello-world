@@ -37,7 +37,7 @@ cp .env.example .env
 
 5. Edit the newly created `.env` file and paste there your Zea Cloud's organization id and secret.
 
-![image](https://user-images.githubusercontent.com/840121/133453746-9b0516e3-5074-4963-8441-b4313a3cfa4f.png)
+![org-settings](./img/org-settings.png)
 
 > You can find your Organization ID and Secret using the Cloud Dashboard. Please sign into https://cloud-staging.zea.live/ and navigate to 'Organization settings'
 
